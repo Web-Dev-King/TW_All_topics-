@@ -1,6 +1,6 @@
 ## Click a Topic to Read Notes
-* [LaTeX Documentation](./LaTeX/README.md)
-* [Beamer Documentation](./Beamer/README.md)
-* [Doxygen Documentation](./Doxygen/README.md)
-* [Google Docs Documentation](./Google-Docs/README.md)
-* [Git & GitHub Documentation](./Git-and-GitHub/README.md)
+* [LaTeX Documentation](./Latex/Readme.md)
+* [Beamer Documentation](./beamer/Readme.md)
+* [Doxygen Documentation](./Doxygen/Readme.md)
+* [Google Docs Documentation](./Googledocs/Readme.md)
+* [Git & GitHub Documentation](./Git&Github/Readme.md)
