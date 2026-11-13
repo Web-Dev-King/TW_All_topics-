@@ -10,23 +10,30 @@
 * **Document Class:** `\documentclass{beamer}` (supports options like `[aspectratio=169]` for widescreen or `[11pt]` for font size).
 * **Title Page Metadata:** `\title{}`, `\subtitle{}`, `\author{}`, `\institute{}`, `\date{\today}`.
 * **Frames (Slides):** Every individual slide is enclosed inside a `frame` environment:
-  ```latex
-  \(\documentclass{beamer} \usetheme{Madrid}\)
 
-  \(\title{Technical Writing Presentation} \author{Your Name} \institute{Department of CSE} \date{\today}\)
+```text
+\documentclass{beamer}
+\usetheme{Madrid}
 
-  \(\begin{document}\)
+\title{Technical Writing Presentation}
+\author{Your Name}
+\institute{Department of CSE}
+\date{\today}
 
-  % Title Slide
-  \(\begin{frame} \titlepage \end{frame}\)
+\begin{document}
 
-  % Content Slide
-  \(\begin{frame}{Slide Title}{Optional Subtitle}\)
-      Hello, Beamer!
-  \(\end{frame}\)
+% Title Slide
+\begin{frame}
+    \titlepage
+\end{frame}
 
-  \(\end{document}\)
-  ```
+% Content Slide
+\begin{frame}{Slide Title}{Optional Subtitle}
+    Hello, Beamer!
+\end{frame}
+
+\end{document}
+```
 
 ---
 
@@ -43,9 +50,15 @@
 * **Sections & Subsections:** `\section{Introduction}` and `\subsection{Motivation}` (placed *outside* frames to populate navigation bars).
 * **Outline Slide:** Use `\tableofcontents` inside a frame to auto-generate an agenda slide.
 * **Highlighting Current Section:**
-  ```latex
-  \(\AtBeginSection[]{ \begin{frame}{Outline} \tableofcontents[currentsection] \end{frame} }\)
-  ```
+
+```text
+\AtBeginSection[]{
+    \begin{frame}{Outline}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+```
+
 * **Navigation Symbols:** Remove bottom-right default icons using `\beamertemplatenavigationsymbolsempty`.
 
 ---
@@ -61,8 +74,17 @@ Beamer provides built-in styled boxes to highlight definitions, warnings, and ex
 
 ## 5. Multi-Column Layouts
 Split a slide into side-by-side sections (useful for text on the left and an image/diagram on the right):
-```latex
-\(\begin{columns} \begin{column}{0.5\textwidth} Left side text or bullet points. \end{column} \begin{column}{0.5\textwidth} \includegraphics[width=\textwidth]{diagram.png} \end{column} \end{columns} \%\%\)MAGIT_PARSER_PROTECT%%```
+
+```text
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+        Left side text or bullet points.
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{diagram.png}
+    \end{column}
+\end{columns}
+```
 
 ---
 
@@ -83,9 +105,15 @@ Overlays reveal slide elements step-by-step across multiple PDF pages within a s
 
 ## 7. Code Blocks, Tables & Images
 * **Source Code (`fragile` frame):** Frames containing verbatim code or `\begin{lstlisting}` **must** include `[fragile]`:
-  ```latex
-  \(\begin{frame}[fragile]{Code Example} \begin{verbatim}\)
-      printf("Hello World")\(; \end{verbatim} \end{frame} \%\%\)MAGIT_PARSER_PROTECT%%  ```
+
+```text
+\begin{frame}[fragile]{Code Example}
+    \begin{verbatim}
+        printf("Hello World");
+    \end{verbatim}
+\end{frame}
+```
+
 * **Tables & Figures:** Uses the same `tabular` and `\includegraphics` syntax as standard LaTeX (captions are optional in slides).
 
 ---
@@ -95,7 +123,7 @@ Overlays reveal slide elements step-by-step across multiple PDF pages within a s
 | Feature | LaTeX (`article`) | Beamer (`beamer`) |
 | :--- | :--- | :--- |
 | **Purpose** | Reports, papers, long documents | Presentations, slideshows |
-| **Page Unit** | Continuous pages | Individual `\begin{frame}` slides |
+| **Page Unit** | Continuous pages | Individual `\(\begin{frame}\)` slides |
 | **Animations** | None (static) | Overlays (`\pause`, `<+->`) |
 | **Styling** | Minimal default layout | Built-in themes & color palettes |
 
